@@ -23,9 +23,13 @@
 
 ### Ansible Ad Hoc
 -a --> argument 
+
 -m  --> module
+
 -i --> inventory
+
 -u --> username 
+
 -b --> execute like root -- > sudo
 
     # aws is a group of hosts(my project), we can use all instead
