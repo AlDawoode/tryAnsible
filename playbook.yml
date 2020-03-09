@@ -1,0 +1,24 @@
+---
+- name: install and start apache
+  hosts: all
+  become: true
+
+
+  tasks:
+  - name: install puthon bindings for SELinux
+    yum: name={{item}} state=present
+    with_items:
+    - libselinux-python
+    - libsemanage-python  
+
+
+  - name: test to see if SeLinux is running
+    command: getenforce
+    register: sestatus
+    changed_when: false
+
+  - name: install apache
+    yum: name=httpd state=present 
+
+  - name: start apache
+    service: name=httpd state=started enabled=yes
