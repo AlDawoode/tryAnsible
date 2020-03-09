@@ -1,0 +1,54 @@
+# Ansible
+
+##### NOTE :
+#
+    - The host file in your project is the inventory file
+    - Playbooks are written in YAML format, They are like a to-do list for 
+      Ansible that contains a list of tasks.
+    - Roles containing certain vars_files, tasks, and handlers based on which 
+      it had declared. 
+--------------------------------------------------------
+### Installing Ansible
+
+    # The most common and preferred way of installation
+    $ pip install ansible
+
+    # Install the epel-release RPM if needed on
+    # CentOS, RHEL, or Scientific Linux
+    $ sudo yum install ansible
+    
+    # You will need the PPA rep configured
+    # sudo apt-get install ansible
+
+
+### Ansible Ad Hoc
+-a --> argument 
+-m  --> module
+-i --> inventory
+-u --> username 
+-b --> execute like root -- > sudo
+
+    # aws is a group of hosts(my project), we can use all instead
+    $ ansible -m ping aws -i hosts
+    $ ansible -m ping all -i hosts
+    $ ansible -m ping all -i hosts -u ec2-user
+    
+    #show info about disk space
+    $ ansible -m shell -a 'df -h' -i hosts all    
+    $ ansible -m shell -a 'hostname' -i hosts all     
+    $ ansible -m shell -a 'whoami' -i hosts all     // who i  am  --> ec2-user
+    $ ansible -m shell -b -a 'whoami' -i hosts all    // 
+
+##### Example of install OR remove "httpd" by using ansible ad hoc :
+#
+    # present equals to install
+    $ ansible aws -i hosts -m yum -a "name=httpd state=present" -b
+    
+    # absent equals to remove
+    $ ansible aws -i hosts -m yum -a "name=httpd state=absent" -b
+
+##### Example of getting information about the machine by using ansible ad hoc (setup module) :
+#
+    $ ansible all -i hosts -m setup
+
+
