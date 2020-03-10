@@ -63,4 +63,10 @@
 
 ##### Example of copy file from the host to all node (copy moudle):
     $ ansible all -m copy -a "src=key.pem dest=~/FileName" -i hosts 
+    
 
+### Ansible PlayBook
+##### Example of run the playbook file from the host machine :
+    ## install_git.yml is the playbook file name
+    ## hosts is the inventory file name
+    $ ansible-playbook install_git.yml -i hosts
