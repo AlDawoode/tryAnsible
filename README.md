@@ -15,6 +15,7 @@
 
     # Install the epel-release RPM if needed on
     # CentOS, RHEL, or Scientific Linux
+    $ sudo yum install epel-release
     $ sudo yum install ansible
     
     # You will need the PPA rep configured
