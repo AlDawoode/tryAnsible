@@ -54,6 +54,9 @@
     $ ansible aws -i hosts -m yum -a "name=httpd state=absent" -b
 
 ##### Example of getting information about the machine by using ansible ad hoc (setup module) :
+##### NOTE :
+    - The setup module get information about the remote machine and these info called "Ansible facts"
+
     $ ansible all -i hosts -m setup
     
 ##### Example of install git by using ansible ad hoc (apt or yum module) :
