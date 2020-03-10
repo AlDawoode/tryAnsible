@@ -47,7 +47,6 @@
     $ ansible -m shell -b -a 'whoami' -i hosts all    // 
 
 ##### Example of install OR remove "httpd" by using ansible ad hoc :
-#
     # present equals to install
     $ ansible aws -i hosts -m yum -a "name=httpd state=present" -b
     
@@ -55,11 +54,9 @@
     $ ansible aws -i hosts -m yum -a "name=httpd state=absent" -b
 
 ##### Example of getting information about the machine by using ansible ad hoc (setup module) :
-#
     $ ansible all -i hosts -m setup
     
 ##### Example of install git by using ansible ad hoc (apt or yum module) :
-#
     $ ansible local -m apt -a "name=git" -i hosts -b
     $ ansible local -m yum -a "name=git" -i hosts -b
     $ ansible local -m yum -a "name=git" -i hosts -b --extra-vars "ansible_sudo_pass=XXXXX"
