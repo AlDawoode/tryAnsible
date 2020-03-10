@@ -57,5 +57,11 @@
 ##### Example of getting information about the machine by using ansible ad hoc (setup module) :
 #
     $ ansible all -i hosts -m setup
+    
+##### Example of install git by using ansible ad hoc (apt or yum module) :
+#
+    $ ansible local -m apt -a "name=git" -i hosts -b
+    $ ansible local -m yum -a "name=git" -i hosts -b
+    $ ansible local -m yum -a "name=git" -i hosts -b --extra-vars "ansible_sudo_pass=XXXXX"
 
 
