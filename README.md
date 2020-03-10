@@ -62,5 +62,5 @@
     $ ansible local -m yum -a "name=git" -i hosts -b --extra-vars "ansible_sudo_pass=XXXXX"
 
 ##### Example of copy file from the host to all node (copy moudle):
-    $ ansible all -m copy -a "src=key.pem dest=~/Desktop" -i hosts 
+    $ ansible all -m copy -a "src=key.pem dest=~/FileName" -i hosts 
 
