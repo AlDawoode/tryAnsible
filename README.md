@@ -103,6 +103,22 @@
     mail ansible_host=server3.company.com
     web2 ansible_host=server4.company.com
     
+    ######################################### NOTE #########################################
+    ## ansible_host is inventroy parameter to specify fqdn or ip address of a server
+    ## other inventroy parameter:
+    - ansible_connection 
+    - ansible_port by default is set to 22 to ssh but if you want to change that for some reason you use this param.
+    - ansible_ssh_pass define the ssh pass for linux
+    - ansible_user define the user that want to make remote connection. example:
+        ansible_user=root or ansible_user=admin 
+    
+    example on ansible_connection parameter
+    web ansible_host=server1.company.com ansible_connection=ssh
+    db ansible_host=server2.company.com ansible_connection=winrm
+    mail ansible_host=server3.company.com ansible_connection=ssh    /// linux server
+    web2 ansible_host=server4.company.com ansible_connection=winrm   /// windwos server
+    localhost ansible_connection=localhost   // to indicate that we like to work with local host :) and not connect to  
+    remote host.
 
 ### Ansible PlayBook
 ##### Example of run the playbook file from the host machine :
