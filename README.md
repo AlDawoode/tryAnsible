@@ -71,7 +71,7 @@
  
 ### Ansible inventroy
 ##### Examples of ansible inventroy file  :
-    ## example one:
+    ## example 1:
     ## simple inentroy file
     server1.company.com
     server2.comapny.com
@@ -95,7 +95,7 @@
     web
     
     ----------------------------------------
-    ## example one:
+    ## example 2:
     ## simple inentroy file using "alias"
     
     web ansible_host=server1.company.com
