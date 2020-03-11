@@ -93,6 +93,16 @@
     mail
     db
     web
+    
+    ----------------------------------------
+    ## example one:
+    ## simple inentroy file using "alias"
+    
+    web ansible_host=server1.company.com
+    db ansible_host=server2.company.com
+    mail ansible_host=server3.company.com
+    web2 ansible_host=server4.company.com
+    
 
 ### Ansible PlayBook
 ##### Example of run the playbook file from the host machine :
