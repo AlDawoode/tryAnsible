@@ -1,0 +1,14 @@
+---
+- name: install git on ec2 (one play for every server)
+  hosts: server1
+  become: True
+  tasks:
+  - name: install git on server1
+    yum: name=git state=present
+
+- name: install git on the seound ec2 (one play for every server)
+  hosts: server2
+  become: True
+  tasks:
+  - name: install git on server2
+    yum: name=git state=present
