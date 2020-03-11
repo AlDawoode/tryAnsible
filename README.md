@@ -66,7 +66,33 @@
 
 ##### Example of copy file from the host to all node (copy moudle):
     $ ansible all -m copy -a "src=key.pem dest=~/FileName" -i hosts 
+ 
+ 
+ 
+### Ansible inventroy
+##### Examples of ansible inventroy file  :
+    ## example one:
+    ## simple inentroy file
+    server1.company.com
+    server2.comapny.com
     
+    [mail]
+    server3.company.com
+    server4.company.com
+    
+    [db]
+    server5.company.com
+    server6.company.com
+    
+    [web]
+    server7.company.com
+    server8.company.com
+    
+    ## We can define group of group by adding children file
+    [all_servers:children]
+    mail
+    db
+    web
 
 ### Ansible PlayBook
 ##### Example of run the playbook file from the host machine :
