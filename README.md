@@ -121,6 +121,34 @@
     remote host.
 
 ### Ansible PlayBook
+##### Example of simple playbook file:
+    ## simple ansible playbook.yml
+    ---
+    -
+      hosts: localhost
+      name: Play1
+      tasks:
+       - name: Execute command "date"
+         command: date
+         
+       - name: Execute script on server
+         script: test_script.sh
+         
+    -
+      hosts: localhost
+      name: Play2
+      tasks:
+       - name: Install web service
+         yum:
+            name: httpd
+            state: present
+        
+       - name: Start web server
+         service:
+            name: httpd
+            state: started
+     
+
 ##### Example of run the playbook file from the host machine :
     ## install_git.yml is the playbook file name
     ## hosts is the inventory file name
