@@ -158,3 +158,36 @@
     ## install_git.yml is the playbook file name
     ## hosts is the inventory file name
     $ ansible-playbook install_git.yml -i hosts
+    
+### Ansible Variables
+## Note the format {{}} we are using to use variable is called Jinja2 Templating.
+## Remember to enclose it  within quotes '{{}}'
+## if the variable is in between a sentence then this is not required {{}}
+
+##### Example of one variable inside the simple playbook file:
+    # sample ansible playbook.yml
+    -
+      name: Add Dns server to resolv.conf
+      hosts: localhost
+      vars:
+         dns_server: 10.1.250.10     //Declare the variable
+      tasks:
+         -lineinfile:
+            path: /etc/resolv.conf
+            line: 'nameserver 10.1.250.10'   // We can use the variable here by writing '{{dns_server}}' 
+
+##### Example of variables inside the inventory file:
+    # sample Inventory File
+  
+    server1 http_port=8081 snmp_port=161-162 inter_ip_range=192.0.2.0
+    // we can use these variable inside the playbook file by writing '{{ variable name  }}'
+    
+    
+##### The best example of variables is to writing them inside new file:
+
+    Note: the file name should be same to the host name "server1.yml"  "local.yml" and so on
+    # sample variable File
+    
+    server1 http_port=8081
+    snmp_port=161-162 
+    inter_ip_range=192.0.2.0
