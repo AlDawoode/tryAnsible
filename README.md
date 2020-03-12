@@ -67,7 +67,12 @@
 ##### Example of copy file from the host to all node (copy moudle):
     $ ansible all -m copy -a "src=key.pem dest=~/FileName" -i hosts 
  
- 
+
+
+
+##### Example of write a new line in some file if the line doesn't exist (lineinfile moudle):
+    $ ansible all -m lineinfile -a "path=/home/osboxes/Desktop/test-project/inventory.txt line=someText" -i           inventory.txt 
+
  
 ### Ansible inventroy
 ##### Examples of ansible inventroy file  :
