@@ -161,8 +161,7 @@
     
 ### Ansible Variables
 #### Note the format {{}} we are using to use variable is called Jinja2 Templating.
-#### Remember to enclose it  within quotes '{{}}'
-#### if the variable is in between a sentence then this is not required {{}}
+#### Remember to enclose it  within quotes '{{}}' if the variable is in between a sentence then this is not required {{}}
 
 ##### Example of one variable inside the simple playbook file:
     # sample ansible playbook.yml
